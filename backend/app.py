@@ -2,12 +2,22 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import numpy as np
 import joblib
+import pickle
 
 app = Flask(__name__)
 CORS(app)
 
 # ✅ Load model
-model = joblib.load("model.pkl")  # This must return a trained model object
+
+
+
+
+import joblib
+model = joblib.load("model.pkl")
+
+
+
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
